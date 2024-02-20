@@ -9,7 +9,7 @@ function Footer() {
       <div className="row">
         <div className="col-sm-12 col-md-6 mt-4">
           <h6>About</h6>
-          <p className="text-justify">X-GARAGE is a helping hand for the one who wish to buy a scondhand bike.We have varius collectons and user can also sell their own bikes</p>
+          <p className="text-justify">Muebles, an Online furniture Store takes pride in selling high quality products and stylish designs to bring exceptional beauty to your homes</p>
         </div>
 
         <div className="col-xs-6 col-md-3 mt-4">

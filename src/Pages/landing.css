@@ -1,5 +1,7 @@
 .back{
-    background-image: url('https://i.pinimg.com/564x/bb/0d/89/bb0d8933e9269bd3e99100bc8be89d51.jpg');
+    /* background-image: url('https://i.pinimg.com/564x/bb/0d/89/bb0d8933e9269bd3e99100bc8be89d51.jpg'); */
+    /* background-image: url('https://i.pinimg.com/474x/a4/05/ba/a405ba410f635b188c7219d8680c473b.jpg'); */
+    background-image: url('../images/back2.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }

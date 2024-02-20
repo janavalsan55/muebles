@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+import logoimage from '../images/logo.png'
 
 import './nav.css'
 function Navbars() {
@@ -19,6 +20,7 @@ function Navbars() {
     const hanldelogout=()=>{
         sessionStorage.removeItem("email")
         sessionStorage.removeItem("userId")
+        
         setlogged(false)
     }
     const navigate=useNavigate()
@@ -34,11 +36,12 @@ function Navbars() {
             navigate('/login')
         }
     }
+    // "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR16TBTOeN53HMOh7pQcPIE68C4xzBcX41CXg&usqp=CAU"
   return (
     <>
-    <div className='d-flex '>
+    <div className='d-flex ' style={{backgroundColor:'#00848c'}}>
         <div>
-           <Link to={'/'}> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR16TBTOeN53HMOh7pQcPIE68C4xzBcX41CXg&usqp=CAU" alt="" className='ms-5 mt-2' style={{width:'80px',height:'60px'}} /></Link>
+           <Link to={'/'}> <img src={logoimage} alt="" className='ms-5 mt-2' style={{width:'60px',height:'60px'}} /></Link>
         </div>
 
         <div className='navfullscreen mt-4 justify-content-center  w-100 fw-bolder' >

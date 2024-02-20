@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Navforadmin from './Navforadmin'
-import { deleteuser, getusers } from '../Services/allApi'
+import { deleteuser, edituser, getusers } from '../Services/allApi'
+
 
 function Userforadmin() {
     const [allusers,setallusers]=useState([])
@@ -18,9 +19,18 @@ function Userforadmin() {
         setresponse(response+1)
         // console.log(e._id);
     }
-    const handlepermission=(e)=>{
-
+    const handlepermission=async(e)=>{
+      var userData=({
+        username:e.username,email:e.email,mobile:e.mobile,password:e.password,access:"approved"
+      })
+      // username:"",email:"",mobile:"",password:"",access:"pending"
+      const id=e._id
+      if(userData.username&&userData.email&&userData.mobile&&userData.password){
+      const res = await edituser(id,userData)}
+      setresponse(response+1)
+      // console.log(userData);
     }
+    
   return (
     <>
     <Navforadmin/>
@@ -32,6 +42,7 @@ function Userforadmin() {
           <th>Name</th>
           <th>Mobile</th>
           <th>Email</th>
+          <th>Access</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -42,9 +53,10 @@ function Userforadmin() {
          <td>{users.username}</td>
          <td>{users.mobile}</td>
          <td>{users.email}</td>
+         <td>{users.access}</td>
          <td className='d-flex justify-content-center'>
             <button className='btn btn-outline-danger' onClick={e=>handledeleteuser(users)}>Block User</button>
-            <button className='btn btn-outline-success ms-2' onClick={e=>handlepermission(users)}>Approve</button>
+            {users.access=="pending"&&<button className='btn btn-outline-success ms-2' onClick={e=>handlepermission(users)}>Approve</button>}
          </td>
        </tr>
         )): <h3 className='text-danger text-center'>No Users</h3>

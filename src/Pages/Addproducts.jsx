@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { addfurAPI } from '../Services/allApi'
 import { addcontext } from '../Context/ContextShare'
+import { useNavigate } from 'react-router-dom'
+import './home.css'
 
 function Addproducts() {
     const [productData,setproductData]=useState({
@@ -9,8 +11,9 @@ function Addproducts() {
     useEffect(()=>{
         productData.userid=sessionStorage.getItem("userId")
     },[])
-
+    const navigate=useNavigate()
     const handleadd=async()=>{
+
         
         console.log(productData);
         const {pname,price,overview,mobile,uname,place,pimage,userid,access}=productData
@@ -36,14 +39,17 @@ function Addproducts() {
             console.log(res);
             if(res.status===200 ){
                 alert("Added successfully")
+            
                 setproductData({pname:"",price:"",overview:"",mobile:"",uname:"",place:"",pimage:"",userid:"",access:"pending"})
+                navigate('/home')
 
             }
         }
 
     }
   return (
-    <div className='w-100 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>
+    <div className='loginbg'>
+    <div className='w-100 d-flex  justify-content-center align-items-center' style={{height:'100vh'}}>
     <div className='bg-light shadow rounded d-flex flex-column' style={{width:'500px',height:'560px'}}>
       <div><h2 className='fw-bolder text-center mt-4'>Add Products</h2></div>
       <div className='ms-5 me-5'><input type="text" placeholder='Product Name' className='form-control mt-5' value={productData.pname} onChange={e=>setproductData({...productData,pname:e.target.value})}/></div>
@@ -59,6 +65,7 @@ function Addproducts() {
        
       </div>
 
+    </div>
     </div>
  )
 }

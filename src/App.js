@@ -25,13 +25,6 @@ function App() {
       <Route path='/adminhome' element={<Adminhome/>}/>
       <Route path='/adminusers' element={<Userforadmin/>}/>
       <Route path='/adminproducts' element={<ProductAdmin/>}/>
-
-
-
-
-      
-
-
     </Routes>
     {/* <Navbars/> */}
     </>

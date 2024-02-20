@@ -29,10 +29,13 @@ export const deleteuser=async(userid)=>{
    return await commonAPI("DELETE",`${BASEURL}/deleteuser`,{userid},"")
 }
 
-// export const getbikesforadmin = async()=>{
-//    return await commonAPI("GET",`${BASEURL}/admin/getbikes`,"","")
+export const edituser = async(userid,reqBody)=>{
+   return await commonAPI("PUT",`${BASEURL}/edituser${userid}`,reqBody,"")
+}
+// export const getfurforadmin = async()=>{
+//    return await commonAPI("GET",`${BASEURL}/admingetfur`,"","")
 // }
 
-// export const deletebike=async(bikeid)=>{
-//    return await commonAPI("DELETE",`${BASEURL}/deletebike`,{bikeid},"")
-// }
+export const deletefur=async(fid)=>{
+   return await commonAPI("DELETE",`${BASEURL}/deletefur`,{fid},"")
+}

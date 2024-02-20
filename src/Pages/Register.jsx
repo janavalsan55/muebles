@@ -28,6 +28,7 @@ const handleregister=async()=>{
   console.log(userData);
 }
   return (
+    <div className='loginbg'>
     <div className='w-100 d-flex justify-content-center align-items-center' style={{height:'100vh'}}>
         <div className='bg-light shadow rounded d-flex flex-column' style={{width:'500px',height:'500px'}}>
           <div><h2 className='fw-bolder text-center mt-4'>Sign Up</h2></div>
@@ -42,6 +43,7 @@ const handleregister=async()=>{
           </div>
 
         </div>
+    </div>
     </div>
   )
 }
